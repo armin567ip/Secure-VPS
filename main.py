@@ -15,7 +15,9 @@ password = (secrets.token_urlsafe(password_length))
 # Adding a linux user
 encPass = crypt.crypt(password,"22")
 os.system("useradd -p "+encPass+ f" {username}")
-
+# Sudo permissions for the new user
+os.system(f"sudo usermod -aG sudo {username}")
+               
 # Disabling QEMU
 os.system("sudo apt-get remove --auto-remove qemu-guest-agent -y")
 
@@ -35,7 +37,7 @@ print (f"Username: {username}")
 print (f"Password: {password}")
 
 # Performing a system reboot
-os.system("Reboot")
+os.system("reboot")
 """)
 
 try:
