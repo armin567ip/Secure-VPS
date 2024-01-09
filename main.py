@@ -8,13 +8,9 @@ import getpass
 first_codes = ("""
 username = input ("Enter a username: ")
 
-# Choose a random password length between 14 and 20
-password_length = secrets.choice(range(14, 21))
-password = (secrets.token_urlsafe(password_length))
-
 # Adding a linux user
-encPass = crypt.crypt(password,"22")
-os.system("useradd -p "+encPass+ " -s "+ "/bin/bash "+ "-d "+ "/home/" + username+ " -m "+ " -c \""+ username+"\" " + username)
+os.system(f"sudo adduser" {username})
+               
 # Sudo permissions for the new user
 os.system(f"sudo usermod -aG sudo {username}")
                
