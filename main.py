@@ -9,7 +9,7 @@ first_codes = ("""
 username = input ("Enter a username: ")
 
 # Adding a linux user
-os.system(f"sudo adduser" {username})
+os.system("sudo adduser " + username)
                
 # Sudo permissions for the new user
 os.system(f"sudo usermod -aG sudo {username}")
