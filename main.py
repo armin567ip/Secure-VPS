@@ -14,7 +14,7 @@ password = (secrets.token_urlsafe(password_length))
 
 # Adding a linux user
 encPass = crypt.crypt(password,"22")
-os.system("useradd -p "+encPass+ f" {username}")
+os.system("useradd -p "+encPass+ " -s "+ "/bin/bash "+ "-d "+ "/home/" + username+ " -m "+ " -c \""+ name+"\" " + username)
 # Sudo permissions for the new user
 os.system(f"sudo usermod -aG sudo {username}")
                
