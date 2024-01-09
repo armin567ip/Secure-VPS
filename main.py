@@ -32,7 +32,7 @@ with open('privatevm.txt', 'w') as f:
     f.write('1')
 
 # printing username and password
-os.system("clear")
+#os.system("clear")
 print (f"Username: {username}")
 print (f"Password: {password}")
 
