@@ -3,7 +3,8 @@ import os
 import crypt
 import secrets
 import getpass
-
+import random
+import string
 # First step codes
 first_codes = ("""
 username = input ("Enter a username: ")
@@ -14,7 +15,8 @@ password = (secrets.token_urlsafe(password_length))
 
 # Adding a linux user
 encPass = crypt.crypt(password,"22")
-os.system("useradd -p "+encPass+ " -s "+ "/bin/bash "+ "-d "+ "/home/" + username+ " -m "+ " -c \""+ name+"\" " + username)
+random_word = ''.join(random.choices(string.ascii_letters + string.digits, k=8))
+os.system("useradd -p "+encPass+ " -s "+ "/bin/bash "+ "-d "+ "/home/" + username+ " -m "+ " -c \""+ random_word+"\" " + username)
 # Sudo permissions for the new user
 os.system(f"sudo usermod -aG sudo {username}")
                
