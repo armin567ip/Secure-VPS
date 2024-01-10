@@ -1,5 +1,5 @@
 # Secure VPS
-This script helps you protect your your Virtual or Dedicated server from the hosting control panel for extra security and privacy
+This script helps you to protect your your Virtual or Dedicated server from the hosting control panels for extra security and privacy
 
 Simply run the following script as root
 ```
